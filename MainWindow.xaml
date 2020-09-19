@@ -1,0 +1,17 @@
+﻿<Window x:Class="ReadExcel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReadExcel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Name="btnLoadQuestion" Content="Official" HorizontalAlignment="Left" Height="47" Margin="168,44,0,0" VerticalAlignment="Top" Width="120" Click="BtnLoadQuestion_Click"/>
+        <Button Name="btnLoadBUQuestion" Content="Backup" Margin="482,44,208.6,326" Click="BtnLoadBUQuestion_Click"/>
+        <TextBox Name="txtBlockFinish" HorizontalAlignment="Left" Height="152" Margin="114,175,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="514"/>
+        <TextBox x:Name="txtMatch" HorizontalAlignment="Left" Height="23" Margin="326,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="557,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>

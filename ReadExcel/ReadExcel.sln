@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadExcel", "ReadExcel\ReadExcel.csproj", "{997AF8ED-0C98-42FC-9FAA-E3C5842700DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{997AF8ED-0C98-42FC-9FAA-E3C5842700DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{997AF8ED-0C98-42FC-9FAA-E3C5842700DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{997AF8ED-0C98-42FC-9FAA-E3C5842700DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{997AF8ED-0C98-42FC-9FAA-E3C5842700DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {277ADFD8-E5A8-454B-BC14-946070976594}
+	EndGlobalSection
+EndGlobal

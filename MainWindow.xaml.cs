@@ -193,10 +193,6 @@ namespace ReadExcel
 
                 //Cau hoi KD
                 worksheet = workbook.Worksheets[0];
-                command = string.Empty;
-
-                command = "INSERT INTO tblMatch(matchID, name) VALUES('" + txtMatch.Text + "', N'" + txtName.Text + "')";
-                DataProvider.Instance.ExecuteQuery(command);
 
                 command = string.Empty;
                 command = "SELECT COUNT(questionID) FROM tblQuestion";
@@ -212,7 +208,7 @@ namespace ReadExcel
                     command += "INSERT INTO tblQuestion(questionID, detail, questionImageName, questionVideoName, answer, questionTypeID, position, matchID, isBackup) VALUES(";
                     command += "" + count + ", ";
                     command += "N'" + worksheet[i, 2].Text + "',N'" + worksheet[i, 4].Text + "',N'" + worksheet[i, 5].Text;
-                    command += "',N'" + worksheet[i, 3].Text + "','1','0', N'" + txtMatch.Text + "', 0)\n";
+                    command += "',N'" + worksheet[i, 3].Text + "','1','0', N'" + txtMatch.Text + "', 1)\n";
                 }
                 DataProvider.Instance.ExecuteQuery(command);
 
@@ -228,9 +224,9 @@ namespace ReadExcel
                     command += "INSERT INTO tblQuestion(questionID, detail, questionImageName, questionVideoName, answer, questionTypeID, position, matchID, isBackup) VALUES(" + count;
                     command += ", N'" + worksheet[i, 2].Text + "',N'" + worksheet[i, 4].Text + "',N'" + worksheet[i, 5].Text;
                     if (i != 2)
-                        command += "',N'" + worksheet[i, 3].Text + "','2','0', N'" + txtMatch.Text + "', 0)\n";
+                        command += "',N'" + worksheet[i, 3].Text + "','2','0', N'" + txtMatch.Text + "', 1)\n";
                     else
-                        command += "',N'" + worksheet[i, 3].Text + "','02','0', N'" + txtMatch.Text + "', 0)\n";
+                        command += "',N'" + worksheet[i, 3].Text + "','02','0', N'" + txtMatch.Text + "', 1)\n";
                 }
                 DataProvider.Instance.ExecuteQuery(command);
 
@@ -245,7 +241,7 @@ namespace ReadExcel
                             worksheet[i, j].Text = worksheet[i, j].NumberValue.ToString();
                     command += "INSERT INTO tblQuestion(questionID, detail, questionImageName, questionVideoName, answer, answerImageName, answerVideoName, questionTypeID, position, matchID, isBackup) VALUES(" + count;
                     command += ", N'" + worksheet[i, 2].Text + "',N'" + worksheet[i, 4].Text + "',N'" + worksheet[i, 5].Text;
-                    command += "',N'" + worksheet[i, 3].Text + "',N'" + worksheet[i, 6].Text + "',N'" + worksheet[i, 7].Text + "','3','0', N'" + txtMatch.Text + "', 0)\n";
+                    command += "',N'" + worksheet[i, 3].Text + "',N'" + worksheet[i, 6].Text + "',N'" + worksheet[i, 7].Text + "','3','0', N'" + txtMatch.Text + "', 1)\n";
                 }
                 DataProvider.Instance.ExecuteQuery(command);
 
@@ -263,7 +259,7 @@ namespace ReadExcel
                                 worksheet[i, j].Text = worksheet[i, j].NumberValue.ToString();
                         command += "INSERT INTO tblQuestion(questionID, detail, questionImageName, questionVideoName, answer, questionTypeID, position, matchID, isBackup) VALUES(" + count;
                         command += ", N'" + worksheet[i, 3].Text + "', N'" + worksheet[i, 5].Text + "',N'" + worksheet[i, 6].Text;
-                        command += "',N'" + worksheet[i, 4].Text + "', '4" + (int.Parse(worksheet[i, 2].Text) / 10).ToString() + "' ," + ((int)((i - 2) / 9) + 1).ToString() + ", N'" + txtMatch.Text + "', 0)\n";
+                        command += "',N'" + worksheet[i, 4].Text + "', '4" + (int.Parse(worksheet[i, 2].Text) / 10).ToString() + "' ," + ((int)((i - 2) / 9) + 1).ToString() + ", N'" + txtMatch.Text + "', 1)\n";
                     }
                 }
                 DataProvider.Instance.ExecuteQuery(command);
@@ -283,7 +279,7 @@ namespace ReadExcel
                         if (worksheet[i, j].NumberValue.ToString() != "NaN")
                             worksheet[i, j].Text = worksheet[i, j].NumberValue.ToString();
                     if (i == 2)
-                        command = "INSERT INTO tblDecodeQuestion(questionID, row, col, detail, answer, questionTypeID, matchID, isBackup) values(" + count + "," + worksheet[i, 4].Text + "," + worksheet[i, 5].Text + ",N'" + worksheet[2, 6].Text + "',N'" + worksheet[2, 7].Text + "', '0', '" + txtMatch.Text + "', 0)\n";
+                        command = "INSERT INTO tblDecodeQuestion(questionID, row, col, detail, answer, questionTypeID, matchID, isBackup) values(" + count + "," + worksheet[i, 4].Text + "," + worksheet[i, 5].Text + ",N'" + worksheet[2, 6].Text + "',N'" + worksheet[2, 7].Text + "', '0', '" + txtMatch.Text + "', 1)\n";
                     else
                     {
                         command = "INSERT INTO tblDecodeQuestion(questionID, row, col, detail, questionImageName, questionVideoName, answer, questionTypeID, matchID, isBackup) VALUES(" + count;
@@ -297,7 +293,7 @@ namespace ReadExcel
                         command += ", " + worksheet[i, 4].Text + ",";
                         command += worksheet[i, 5].Text + ",";
                         command += "N'" + worksheet[i, 6].Text + "',N'" + worksheet[i, 8].Text + "',N'" + worksheet[i, 9].Text + "',";
-                        command += "N'" + worksheet[i, 7].Text + "'," + questionTypeID.ToString() + ", '" + txtMatch.Text + "', 0)\n";
+                        command += "N'" + worksheet[i, 7].Text + "'," + questionTypeID.ToString() + ", '" + txtMatch.Text + "', 1)\n";
                     }
                     DataProvider.Instance.ExecuteQuery(command);
                 }
